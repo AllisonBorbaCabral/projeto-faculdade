@@ -8,6 +8,9 @@ class Warehouse(models.Model):
         null=False,
         blank=False,
     )
+    allow_negative_stock = models.BooleanField(
+        default=False
+    )
     is_active = models.BooleanField(
         default=True,
     )
