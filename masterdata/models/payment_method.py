@@ -39,6 +39,7 @@ class PaymentMethod(models.Model):
     class Meta:
         verbose_name = 'Payment Method'
         verbose_name_plural = 'Payment Methods'
+        db_table='payment_method'
         constraints = [
             models.UniqueConstraint(
                 fields=['name'],
