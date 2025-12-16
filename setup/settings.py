@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'locations.apps.LocationsConfig',
     'masterdata.apps.MasterdataConfig',
+    'inventory.apps.InventoryConfig',
 ]
 
 MIDDLEWARE = [
