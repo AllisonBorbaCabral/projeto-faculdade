@@ -34,6 +34,7 @@ class Warehouse(models.Model):
     class Meta:
         verbose_name = 'Warehouse'
         verbose_name_plural = 'Warehouses'
+        db_table='warehouse'
         constraints = [
             models.UniqueConstraint(
                 fields=['name'],
