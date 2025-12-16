@@ -1,35 +1,8 @@
 from django.contrib import admin
-from masterdata.models.attribute import Attribute, AttributeValue
+from masterdata.models.attribute import Attribute
+from .attribute_value import AttributeValueInline
 
 # Register your models here.
-# class ListAttributes(admin.ModelAdmin):
-#     list_display = ('id', 'name', 'is_active', 'created_at', 'updated_at', 'created_by', 'updated_by',)
-#     list_display_links = ('id',)
-#     search_fields = ('id', 'name',)
-#     list_filter = ('is_active',)
-#     list_editable = ('name', 'is_active',)
-#     list_per_page = 10
-
-# admin.site.register(Attribute, ListAttributes)
-
-# class ListAttributeValues(admin.ModelAdmin):
-#     list_display = ('id', 'value', 'attribute', 'is_active', 'created_at', 'updated_at', 'created_by', 'updated_by',)
-#     list_display_links = ('id',)
-#     search_fields = ('id', 'value', 'attribute',)
-#     list_filter = ('attribute', 'is_active',)
-#     list_editable = ('value', 'attribute', 'is_active',)
-#     list_per_page = 10
-
-# admin.site.register(AttributeValue, ListAttributeValues)
-
-
-
-class AttributeValueInline(admin.TabularInline):
-    model = AttributeValue
-    extra = 0  # número de linhas adicionais para novo registro
-    fields = ('value', 'is_active', 'created_by', 'updated_by')
-    readonly_fields = ('created_by', 'updated_by')
-
 @admin.register(Attribute)
 class AttributeAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'is_active', 'created_at', 'updated_at', 'created_by', 'updated_by',)

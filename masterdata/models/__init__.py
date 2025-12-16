@@ -1,4 +1,5 @@
 from .unit import Unit
 from .warehouse import Warehouse
-from .paymentmethod import PaymentMethod
-from .attribute import Attribute, AttributeValue
+from .payment_method import PaymentMethod
+from .attribute import Attribute
+from .attribute_value import AttributeValue
