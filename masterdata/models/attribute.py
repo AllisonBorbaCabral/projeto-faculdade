@@ -39,6 +39,7 @@ class Attribute(models.Model):
     class Meta:
         verbose_name = 'Attribute'
         verbose_name_plural = 'Attributes'
+        db_table='attribute'
         constraints = [
             models.UniqueConstraint(
                 fields=['name'],

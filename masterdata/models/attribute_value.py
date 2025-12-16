@@ -44,6 +44,7 @@ class AttributeValue(models.Model):
     class Meta:
         verbose_name = 'Attribute Value'
         verbose_name_plural = 'Attribute Values'
+        db_table='attribute_value'
         constraints = [
             models.UniqueConstraint(
                 fields=['value', 'attribute'],
