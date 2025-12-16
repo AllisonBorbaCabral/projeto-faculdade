@@ -48,6 +48,10 @@ class PriceTable(models.Model):
         null=True,
         blank=True,
     )
+
+    def __str__(self):
+        return self.name
+
     class Meta:
         verbose_name = 'Price Table'
         verbose_name_plural = 'Price Tables'
