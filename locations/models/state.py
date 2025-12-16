@@ -52,6 +52,7 @@ class State(models.Model):
     class Meta:
         verbose_name = 'State'
         verbose_name_plural = 'States'
+        db_table='state'
         constraints = [
             models.UniqueConstraint(
                 fields=['name', 'acronym'],
