@@ -44,6 +44,7 @@ class Unit(models.Model):
     class Meta:
         verbose_name = 'Unit'
         verbose_name_plural = 'Units'
+        db_table='unit'
         constraints = [
             models.UniqueConstraint(
                 fields=['name', 'symbol'],
