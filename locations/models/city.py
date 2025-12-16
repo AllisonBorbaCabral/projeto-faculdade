@@ -51,6 +51,7 @@ class City(models.Model):
     class Meta:
         verbose_name = 'City'
         verbose_name_plural = 'Cities'
+        db_table='city'
         constraints = [
             models.UniqueConstraint(
                 fields=['name', 'state'],
