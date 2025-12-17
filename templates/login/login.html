@@ -1,0 +1,25 @@
+{% extends 'ui/base.html' %}
+{% load static %}
+
+{% block app_title %}Login{% endblock %}
+
+{% block body_class %}td-flex align-items-center py-4 bg-body-tertiary{% endblock %}
+
+{% block content %}
+    <main class="form-signin w-100 m-auto">
+        <form action="{% url 'ui:login' %}" method="POST">
+            {% csrf_token %}
+            <img class="mb-4" src="" alt="" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-normal">ERP</h1>
+            
+            {% for field in form.visible_fields %}
+            <div class="form-floating">
+                {{ field }}
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            </div>
+            {% endfor %}
+            <button class="btn btn-primary w-100 py-2" type="submit">Entrar</button>
+            <p class="mt-5 mb-3 text-body-secondary">© 2025</p>
+        </form>
+    </main>
+{% endblock %}

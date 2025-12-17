@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'locations.apps.LocationsConfig',
     'masterdata.apps.MasterdataConfig',
     'inventory.apps.InventoryConfig',
+    'ui.apps.UiConfig',
 ]
 
 MIDDLEWARE = [
@@ -61,7 +62,7 @@ ROOT_URLCONF = 'setup.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -142,3 +143,9 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger',
     messages.SUCCESS: 'success',
 }
+
+# Autenticação
+
+LOGIN_REDIRECT_URL = 'ui:index'
+LOGOUT_REDIRECT_URL = 'ui:login'
+LOGIN_URL = 'ui:login'

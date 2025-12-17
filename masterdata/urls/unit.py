@@ -1,6 +1,9 @@
 from django.urls import path
-from masterdata.views.unit import index
+from masterdata.views.unit import unit_list, unit_add
+
+app_name = 'unit'
 
 urlpatterns = [
-    path('', index, name='index'),
+    path('', unit_list, name='list'),
+    path('unit-add/', unit_add, name='add'),
 ]

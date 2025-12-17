@@ -1,0 +1,42 @@
+{% extends 'ui/base.html' %}
+{% load static %}
+
+{% block app_title %}Units{% endblock %}
+{% block body_class %}td-flex align-items-center py-4 bg-body-tertiary{% endblock %}
+
+{% block content %}
+    <main>
+        <a href="{% url 'unit:add' %}">Adicionar</a>
+        <div class="table-responsive small">
+            <table class="table table-striped table-sm">
+                <thead>
+                    <tr>
+                        {% for field in fields %}
+                            <th class="col">{{ field|capfirst }}</th>
+                        {% endfor %}
+                        <th class="col">Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for unit in units %}
+                        <tr>
+                            <td>{{ unit.id }}</td>
+                            <td>{{ unit.name }}</td>
+                            <td>{{ unit.symbol }}</td>
+                            <td>{{ unit.is_active }}</td>
+                            <td>{{ unit.created_by }}</td>
+                            <td>{{ unit.updated_by }}</td>
+                            <td>{{ unit.created_at }}</td>
+                            <td>{{ unit.updated_at }}</td>
+                            <td>
+                                <a href="#">Editar</a>|
+                                <a href="#">Ver</a>|
+                                <a href="#">Excluir</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+{% endblock %}
